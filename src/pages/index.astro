@@ -1,0 +1,224 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+	{
+		number: '01',
+		title: 'Lumen / identidad digital',
+		type: 'Dirección de arte · 2025',
+		color: 'lime',
+		copy: 'Un sistema visual que convierte la energía solar en una experiencia de marca cálida, clara y memorable.',
+	},
+	{
+		number: '02',
+		title: 'Marea / producto cultural',
+		type: 'Estrategia · UX/UI · 2024',
+		color: 'blue',
+		copy: 'Diseño de una plataforma que hace visible lo que pasa en la escena creativa local.',
+	},
+	{
+		number: '03',
+		title: 'Nómada / objeto editorial',
+		type: 'Diseño editorial · 2024',
+		color: '',
+		copy: 'Una publicación física y digital para mirar los viajes desde otro ángulo.',
+	},
+];
+
+const visualRecommendations = [
+	{ number: '01', title: 'Contraste con propósito', copy: 'Usa una base cálida y reserva el azul, coral y lima para guiar la mirada hacia lo importante.', tone: 'coral' },
+	{ number: '02', title: 'Tipografía con carácter', copy: 'Combina una sans geométrica para ordenar la información con una serif expresiva para darle personalidad.', tone: 'blue' },
+	{ number: '03', title: 'Movimiento breve', copy: 'Anima entradas, enlaces y el ticker con suavidad; la interacción debe acompañar el mensaje, no competir con él.', tone: 'lime' },
+];
+---
+
+<Layout>
+	<div class="site-shell">
+		<nav class="nav" aria-label="Navegación principal">
+			<a class="wordmark" href="#top" aria-label="Inicio">MH<span>.</span></a>
+			<div class="nav-links">
+				<a href="#work">Trabajo</a>
+				<a href="#visual">Visual</a>
+				<a href="#about">Sobre mí</a>
+				<a class="nav-contact" href="#contact">Hablemos <span aria-hidden="true">↗</span></a>
+			</div>
+		</nav>
+
+		<main id="top">
+			<section class="hero" aria-labelledby="hero-title">
+				<div class="hero-intro">
+					<p class="eyebrow"><span class="status-dot"></span>Diseñador multidisciplinar · peru/ remoto</p>
+					<h1 id="hero-title">Ideas con<br /><em>algo</em> que decir<span class="blue-dot">.</span></h1>
+					<p class="hero-copy">Soy Martin Romero. Creo identidades, productos y experiencias digitales para proyectos que quieren mover algo por dentro.</p>
+					<a class="circle-link" href="#work" aria-label="Ver proyectos"><span>Explorar<br />proyectos</span><strong>↓</strong></a>
+				</div>
+				<div class="hero-visual" aria-label="Retrato de Martin Herculez">
+					<div class="visual-frame">
+						<img src="/images/yo-martin.jpg" alt="Mi foto de perfil">
+					</div>
+					<div class="orbit orbit-one"></div>
+					<div class="orbit orbit-two"></div>
+					<div class="visual-label">Disponible para<br />proyectos selectos <span>✳</span></div>
+				</div>
+			</section>
+
+			<section class="ticker" aria-label="Especialidades">
+				<div>BRAND WORLDS <span>✳</span> DIGITAL EXPERIENCES <span>✳</span> CULTURAL PROJECTS <span>✳</span> BRAND WORLDS <span>✳</span></div>
+			</section>
+
+			<section class="work-section" id="work" aria-labelledby="work-title">
+				<div class="section-heading">
+					<p class="eyebrow">01 — Cosas que he hecho</p>
+					<h2 id="work-title">Trabajo<br /><em>con intención.</em></h2>
+					<p class="section-note">Cada proyecto empieza con una pregunta incómoda y termina en algo que se puede sentir.</p>
+				</div>
+				<div class="project-list">
+					{projects.map((project) => (
+						<a class={`project project-${project.color}`} href="#contact">
+							<div class="project-number">{project.number}</div>
+							<div class="project-art" aria-hidden="true"><span>{project.number}</span><i></i><b></b></div>
+							<div class="project-info">
+								<p>{project.type}</p>
+								<h3>{project.title}</h3>
+								<span class="arrow">↗</span>
+								<p class="project-copy">{project.copy}</p>
+							</div>
+						</a>
+					))}
+				</div>
+			</section>
+
+			<section class="visual-section" id="visual" aria-labelledby="visual-title">
+				<div class="visual-heading">
+					<p class="eyebrow">02 — Recomendaciones visuales</p>
+					<h2 id="visual-title">Haz que<br /><em>se sienta.</em></h2>
+					<p>Una dirección visual memorable necesita intención, contraste y espacio para respirar.</p>
+				</div>
+				<div class="recommendation-list">
+					{visualRecommendations.map((recommendation) => (
+						<article class={`recommendation recommendation-${recommendation.tone}`}>
+							<span class="recommendation-number">{recommendation.number}</span>
+							<div>
+								<h3>{recommendation.title}</h3>
+								<p>{recommendation.copy}</p>
+							</div>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<section class="about-section" id="about" aria-labelledby="about-title">
+				<div class="about-stamp">MH<br /><span>est. 2025</span></div>
+				<div>
+					<p class="eyebrow">02 — Un poco de contexto</p>
+					<h2 id="about-title">Diseño para<br /><em>personas curiosas.</em></h2>
+				</div>
+				<div class="about-copy">
+					<p>No me interesa decorar respuestas. Me interesa encontrar mejores preguntas, escuchar con atención y construir algo que tenga sentido incluso cuando se apaga la pantalla.</p>
+					<div class="stats"><div><strong>01</strong><span>años creando</span></div><div><strong>24</strong><span>proyectos lanzados</span></div><div><strong>11</strong><span>equipos felices</span></div></div>
+				</div>
+			</section>
+
+			<section class="contact-section" id="contact" aria-labelledby="contact-title">
+				<p class="eyebrow">03 — El siguiente capítulo</p>
+				<h2 id="contact-title">¿Tienes algo<br /><em>en mente?</em></h2>
+				<a class="email-link" href="mailto:martin2002harold@gmail.com">martin2002harold@gmail.com <span>↗</span></a>
+				<div class="contact-bottom"><span>© 2025 Martin Herculez</span><span><a href="https://github.com/Martinherculez" target="_blank" rel="noreferrer">GitHub</a> · Instagram · LinkedIn</span><span>Hecho con intención y Astro</span></div>
+			</section>
+		</main>
+	</div>
+</Layout>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+	:global(*) { box-sizing: border-box; }
+	:global(html) { scroll-behavior: smooth; }
+	:global(body) { background: #f4f0e8; color: #12203b; }
+	.site-shell { overflow: hidden; }
+	.nav { align-items: center; display: flex; justify-content: space-between; margin: 0 auto; max-width: 1280px; padding: 28px 5vw; }
+	.wordmark { color: #12203b; font-size: 28px; font-weight: 700; letter-spacing: -0.09em; text-decoration: none; }
+	.wordmark span, .blue-dot { color: #3559ff; }
+	.nav-links { align-items: center; display: flex; gap: 34px; }
+	.nav-links a { color: #12203b; font-family: 'DM Mono', monospace; font-size: 11px; text-decoration: none; text-transform: uppercase; }
+	.nav-links a:hover { color: #3559ff; }
+	.nav-contact { border-bottom: 1px solid #12203b; padding-bottom: 5px; }
+	.nav-contact span { color: #3559ff; font-size: 16px; margin-left: 6px; }
+	.hero { display: grid; gap: 5vw; grid-template-columns: 1.05fr .95fr; margin: 0 auto; max-width: 1280px; min-height: 700px; padding: 8vw 5vw 7vw; }
+	.eyebrow { color: #3559ff; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .06em; margin: 0 0 30px; text-transform: uppercase; }
+	.status-dot { background: #c9f047; border: 2px solid #12203b; border-radius: 50%; display: inline-block; height: 9px; margin-right: 8px; width: 9px; }
+	h1, h2, h3, p { margin-top: 0; }
+	h1, h2 { font-size: clamp(58px, 8.6vw, 124px); font-weight: 600; letter-spacing: -.085em; line-height: .88; margin-bottom: 37px; }
+	h1 em, h2 em { color: #ef674d; font-family: Georgia, serif; font-weight: 400; letter-spacing: -.1em; }
+	.hero-copy { font-size: 16px; line-height: 1.55; margin-bottom: 42px; max-width: 340px; }
+	.circle-link { align-items: center; background: #c9f047; border: 1px solid #12203b; border-radius: 50%; color: #12203b; display: flex; font-family: 'DM Mono', monospace; font-size: 10px; height: 115px; justify-content: center; line-height: 1.25; position: relative; text-decoration: none; text-transform: uppercase; transition: transform .25s ease; width: 115px; }
+	.circle-link strong { bottom: 20px; font-size: 17px; position: absolute; right: 20px; }
+	.circle-link:hover { transform: rotate(-10deg) scale(1.05); }
+	.hero-visual { align-items: center; display: flex; justify-content: center; min-height: 530px; position: relative; }
+	.visual-frame { background: #ef674d; border: 1px solid #12203b; height: min(42vw, 490px); overflow: hidden; transform: rotate(5deg); width: min(31vw, 355px); z-index: 2; }
+	.visual-frame img { filter: grayscale(100%); height: 100%; mix-blend-mode: multiply; object-fit: cover; width: 100%; }
+	.orbit { border: 1px solid #3559ff; border-radius: 50%; height: 480px; position: absolute; transform: rotate(-32deg); width: 180px; }
+	.orbit-one { transform: rotate(-32deg) translateX(-25px); }
+	.orbit-two { border-color: #ef674d; height: 530px; transform: rotate(38deg) translateX(25px); width: 210px; }
+	.visual-label { bottom: 2%; font-family: 'DM Mono', monospace; font-size: 10px; left: 5%; line-height: 1.45; position: absolute; text-transform: uppercase; z-index: 3; }
+	.visual-label span { color: #ef674d; font-size: 20px; }
+	.ticker { background: #3559ff; color: #f4f0e8; font-family: 'DM Mono', monospace; font-size: 12px; overflow: hidden; padding: 17px 0; white-space: nowrap; }
+	.ticker div { animation: scroll 28s linear infinite; display: inline-block; }
+	.ticker span { color: #c9f047; margin: 0 25px; }
+	@keyframes scroll { to { transform: translateX(-25%); } }
+	.work-section, .about-section { margin: 0 auto; max-width: 1280px; padding: 150px 5vw; }
+	.section-heading { display: grid; gap: 30px; grid-template-columns: 1fr 1.1fr .8fr; margin-bottom: 75px; }
+	.section-heading .eyebrow { padding-top: 13px; }
+	.section-heading h2, .about-section h2 { font-size: clamp(52px, 7vw, 92px); margin: 0; }
+	.section-note { align-self: end; font-size: 14px; line-height: 1.55; max-width: 210px; }
+	.project-list { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+	.project { border: 1px solid #12203b; color: #12203b; display: block; min-height: 520px; padding: 20px; position: relative; text-decoration: none; transition: transform .3s ease; }
+	.project:hover { transform: translateY(-10px); }
+	.project-lime { background: #c9f047; }
+	.project-coral { background: #ef674d; }
+	.project-blue { background: #3559ff; color: #f4f0e8; }
+	.project-number { font-family: 'DM Mono', monospace; font-size: 11px; }
+	.project-art { height: 235px; margin: 35px auto 30px; overflow: hidden; position: relative; width: 82%; }
+	.project-art span { font-family: 'Space Grotesk', sans-serif; font-size: 150px; font-weight: 700; left: -13px; line-height: 1; position: absolute; top: 30px; }
+	.project-art i, .project-art b { border: 1px solid currentColor; border-radius: 50%; height: 190px; left: 14%; position: absolute; top: 22px; transform: rotate(25deg); width: 110px; }
+	.project-art b { height: 225px; left: 42%; top: 5px; transform: rotate(-25deg); width: 130px; }
+	.project-coral .project-art i { background: #c9f047; border: 0; }
+	.project-blue .project-art i { background: #ef674d; border: 0; }
+	.project-info { border-top: 1px solid currentColor; padding-top: 15px; position: relative; }
+	.project-info > p:first-child { font-family: 'DM Mono', monospace; font-size: 9px; margin-bottom: 15px; text-transform: uppercase; }
+	.project h3 { font-size: 25px; letter-spacing: -.06em; margin-bottom: 12px; }
+	.arrow { font-size: 24px; position: absolute; right: 0; top: 10px; }
+	.project-copy { font-size: 12px; line-height: 1.45; margin: 0; max-width: 250px; }
+	.visual-section { background: #12203b; color: #f4f0e8; display: grid; gap: 7vw; grid-template-columns: .9fr 1.5fr; padding: 130px 5vw; }
+	.visual-heading h2 { color: #f4f0e8; font-size: clamp(52px, 7vw, 92px); margin: 0 0 25px; }
+	.visual-heading > p:last-child { color: #b9c0ce; font-size: 15px; line-height: 1.55; max-width: 250px; }
+	.recommendation-list { border-top: 1px solid #4b5871; }
+	.recommendation { align-items: start; border-bottom: 1px solid #4b5871; display: grid; gap: 30px; grid-template-columns: 50px 1fr; padding: 28px 0; }
+	.recommendation-number { color: #c9f047; font-family: 'DM Mono', monospace; font-size: 11px; }
+	.recommendation h3 { font-size: 25px; letter-spacing: -.05em; margin-bottom: 9px; }
+	.recommendation p { color: #b9c0ce; font-size: 13px; line-height: 1.5; margin: 0; max-width: 430px; }
+	.recommendation-coral h3 { color: #ef674d; }
+	.recommendation-blue h3 { color: #7f98ff; }
+	.recommendation-lime h3 { color: #c9f047; }
+	.about-section { align-items: start; border-top: 1px solid #12203b; display: grid; gap: 5vw; grid-template-columns: .7fr 1.3fr .9fr; }
+	.about-stamp { border: 1px solid #12203b; border-radius: 50%; color: #ef674d; font-size: 36px; height: 125px; line-height: .8; padding: 32px 20px; text-align: center; transform: rotate(-12deg); width: 125px; }
+	.about-stamp span { color: #12203b; font-family: 'DM Mono', monospace; font-size: 8px; }
+	.about-copy { padding-top: 10px; }
+	.about-copy > p { font-size: 18px; line-height: 1.5; max-width: 330px; }
+	.stats { border-top: 1px solid #12203b; display: flex; gap: 20px; margin-top: 55px; padding-top: 15px; }
+	.stats div { display: flex; flex-direction: column; }
+	.stats strong { font-size: 29px; letter-spacing: -.06em; }
+	.stats span { font-family: 'DM Mono', monospace; font-size: 8px; line-height: 1.3; text-transform: uppercase; }
+	.contact-section { background: #12203b; color: #f4f0e8; padding: 120px 5vw 25px; }
+	.contact-section .eyebrow { color: #c9f047; }
+	.contact-section h2 { font-size: clamp(65px, 11vw, 155px); margin-bottom: 65px; }
+	.email-link { border-bottom: 1px solid #ef674d; color: #f4f0e8; display: inline-flex; font-family: 'DM Mono', monospace; font-size: clamp(16px, 2vw, 25px); gap: 20px; padding-bottom: 12px; text-decoration: none; }
+	.email-link span { color: #c9f047; }
+	.contact-bottom { border-top: 1px solid #4b5871; display: flex; font-family: 'DM Mono', monospace; font-size: 9px; justify-content: space-between; margin-top: 145px; padding-top: 17px; text-transform: uppercase; }
+	@media (max-width: 720px) {
+		.nav { padding: 23px 6vw; }.nav-links { gap: 15px; }.nav-links a:not(.nav-contact) { display: none; }.nav-links a { font-size: 9px; }
+		.hero { display: block; min-height: auto; padding: 70px 6vw 100px; }.hero-visual { margin-top: 70px; min-height: 430px; }.visual-frame { height: 390px; width: 72vw; }.orbit { height: 390px; }.orbit-two { height: 430px; }.visual-label { bottom: 0; left: 0; }
+		.work-section, .about-section { padding: 95px 6vw; }.section-heading, .about-section, .visual-section { display: block; }.section-heading h2 { margin-bottom: 25px; }.section-note { max-width: 270px; }.project-list { grid-template-columns: 1fr; }.project { min-height: 450px; }.visual-section { padding: 95px 6vw; }.visual-heading { margin-bottom: 55px; }.visual-heading h2 { margin-bottom: 25px; }.recommendation { gap: 18px; grid-template-columns: 35px 1fr; }.recommendation h3 { font-size: 21px; }.about-stamp { margin-bottom: 55px; }.about-section h2 { margin-bottom: 40px; }.about-copy { padding: 0; }
+		.contact-section { padding: 90px 6vw 20px; }.contact-section h2 { margin-bottom: 45px; }.contact-bottom { align-items: start; flex-direction: column; gap: 10px; margin-top: 100px; }
+	}
+</style>
