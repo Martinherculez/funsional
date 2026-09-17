@@ -122,8 +122,29 @@ const visualRecommendations = [
 			<section class="contact-section" id="contact" aria-labelledby="contact-title">
 				<p class="eyebrow">03 — El siguiente capítulo</p>
 				<h2 id="contact-title">¿Tienes algo<br /><em>en mente?</em></h2>
-				<a class="email-link" href="mailto:martin2002harold@gmail.com">martin2002harold@gmail.com <span>↗</span></a>
-				<div class="contact-bottom"><span>© 2025 Martin Herculez</span><span><a href="https://github.com/Martinherculez" target="_blank" rel="noreferrer">GitHub</a> · Instagram · LinkedIn</span><span>Hecho con intención y Astro</span></div>
+				<a
+					class="email-link"
+					href="mailto:martin2002harold@gmail.com?subject=Quiero%20trabajar%20contigo&body=Hola%20Martin%2C%20me%20gustaría%20contarte%20sobre%20mi%20proyecto."
+				>
+					Envíame un mensaje <span>↗</span>
+				</a>
+				<div class="contact-bottom">
+					<span>© 2025 Martin Herculez</span>
+
+					<div class="social-links">
+						<a href="https://www.instagram.com/aaron_harold_/" target="_blank" rel="noopener noreferrer">
+							Instagram ↗
+						</a>
+						<a href="https://www.linkedin.com/in/aaron-martin-994095402/" target="_blank" rel="noopener noreferrer">
+							LinkedIn ↗
+						</a>
+						<a href="https://github.com/Martinherculez" target="_blank" rel="noopener noreferrer">
+							GitHub ↗
+						</a>
+					</div>
+
+					<span>Hecho con intención y Astro</span>
+				</div>
 			</section>
 		</main>
 	</div>
@@ -215,6 +236,25 @@ const visualRecommendations = [
 	.email-link { border-bottom: 1px solid #ef674d; color: #f4f0e8; display: inline-flex; font-family: 'DM Mono', monospace; font-size: clamp(16px, 2vw, 25px); gap: 20px; padding-bottom: 12px; text-decoration: none; }
 	.email-link span { color: #c9f047; }
 	.contact-bottom { border-top: 1px solid #4b5871; display: flex; font-family: 'DM Mono', monospace; font-size: 9px; justify-content: space-between; margin-top: 145px; padding-top: 17px; text-transform: uppercase; }
+
+	.social-links {
+		display: flex;
+		gap: 10px;
+	}
+
+	social-links a {
+		border: 1px solid #c9f047;
+		color: #c9f047;
+		padding: 8px 12px;
+		text-decoration: none;
+		transition: background 0.2s ease, color 0.2s ease;
+	}
+
+	social-links a:hover {
+		background: #c9f047;
+		color: #12203b;
+	}
+
 	@media (max-width: 720px) {
 		.nav { padding: 23px 6vw; }.nav-links { gap: 15px; }.nav-links a:not(.nav-contact) { display: none; }.nav-links a { font-size: 9px; }
 		.hero { display: block; min-height: auto; padding: 70px 6vw 100px; }.hero-visual { margin-top: 70px; min-height: 430px; }.visual-frame { height: 390px; width: 72vw; }.orbit { height: 390px; }.orbit-two { height: 430px; }.visual-label { bottom: 0; left: 0; }
